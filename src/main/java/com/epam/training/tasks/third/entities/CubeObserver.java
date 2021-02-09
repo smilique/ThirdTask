@@ -1,6 +1,7 @@
 package com.epam.training.tasks.third.entities;
 
 import com.epam.training.tasks.third.logic.CubeCalculator;
+import org.apache.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +9,8 @@ import java.util.Map;
 
 
 public class CubeObserver implements Observer{
+
+    private static final Logger LOGGER = Logger.getLogger(CubeObserver.class);
 
     private static CubeObserver instance = getInstance();
 
@@ -32,6 +35,9 @@ public class CubeObserver implements Observer{
         double volume = cubeCalculator.getCubeVolume(cube);
         CubeParameters parameters = new CubeParameters(area, volume);
         int cubeId = cube.getId();
+
+        LOGGER.info("Updating Observable " + cubeId);
+
         cubeMap.put(cubeId, parameters);
     }
 
@@ -40,12 +46,19 @@ public class CubeObserver implements Observer{
         double volume = cubeCalculator.getCubeVolume(cube);
         CubeParameters parameters = new CubeParameters(area, volume);
         int cubeId = cube.getId();
+
+        LOGGER.info("Adding Observable " + cubeId);
+
         cubeMap.put(cubeId,parameters);
     }
 
     public void removeObservable(CubeObservable cube) {
 
-        cubeMap.remove(cube.getId());
+        int cubeId = cube.getId();
+
+        LOGGER.info("Removing Observable " + cubeId);
+
+        cubeMap.remove(cubeId);
 
     }
 

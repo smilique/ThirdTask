@@ -43,6 +43,7 @@ public class CubeObservable extends Cube implements Observable {
         cube.id = id;
     }
 
+
     public int getId() {
         return this.id;
     }

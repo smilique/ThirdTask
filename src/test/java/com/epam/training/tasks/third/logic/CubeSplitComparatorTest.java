@@ -15,7 +15,6 @@ public class CubeSplitComparatorTest {
         //given
         String expected = "YZ splits cube to 71,4% & 28,6%";
 
-
         //when
         String actual = cubeSplitComparator.split(new Cube(-5,2,3,7),YZ);
 

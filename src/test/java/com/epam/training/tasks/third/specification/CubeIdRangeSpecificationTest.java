@@ -1,4 +1,4 @@
-package com.epam.training.tasks.third.repository;
+package com.epam.training.tasks.third.specification;
 
 import com.epam.training.tasks.third.entities.CubeObservable;
 import com.epam.training.tasks.third.specification.CubeIdRangeSpecification;
@@ -15,10 +15,13 @@ public class CubeIdRangeSpecificationTest {
      CubeIdRangeSpecification idSpecification;
     @Test
     public void aTestCubeSpecificationByIdShouldReturnTrueWhenCubeIdInRange() {
+
         //given
         idSpecification = new CubeIdRangeSpecification(1,1);
+
         //when
         boolean actual = idSpecification.specified(cube);
+
         //then
         Assert.assertTrue(actual);
 
@@ -26,10 +29,13 @@ public class CubeIdRangeSpecificationTest {
 
     @Test
     public void bTestCubeSpecificationByIdShouldReturnFalseWhenCubeIdLowerThanRange() {
+
         //given
         idSpecification = new CubeIdRangeSpecification(4,4);
+
         //when
         boolean actual = idSpecification.specified(cube);
+
         //then
         Assert.assertFalse(actual);
 
@@ -37,10 +43,13 @@ public class CubeIdRangeSpecificationTest {
 
     @Test
     public void cTestCubeSpecificationByIdShouldReturnFalseWhenCubeIdHigherThanRange() {
+
         //given
         idSpecification = new CubeIdRangeSpecification(0,0);
+
         //when
         boolean actual = idSpecification.specified(cube);
+
         //then
         Assert.assertFalse(actual);
 

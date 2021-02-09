@@ -1,6 +1,5 @@
 package com.epam.training.tasks.third.logic;
 
-import com.epam.training.tasks.third.entities.CubeObserver;
 
 public class CubeIdGenerator {
 

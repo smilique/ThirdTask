@@ -56,6 +56,10 @@ public class Cube {
         return sideLength;
     }
 
+    public void setSideLength(double newSideLength) {
+        this.sideLength = newSideLength;
+    }
+
     @Override
     public String toString() {
         return "params{" +

@@ -1,4 +1,4 @@
-package com.epam.training.tasks.third.repository;
+package com.epam.training.tasks.third.specification;
 
 import com.epam.training.tasks.third.entities.CubeObservable;
 import com.epam.training.tasks.third.specification.CubeSideRangeSpecification;

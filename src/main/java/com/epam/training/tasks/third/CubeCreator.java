@@ -5,11 +5,14 @@ import com.epam.training.tasks.third.data.DataParser;
 import com.epam.training.tasks.third.data.DataReader;
 import com.epam.training.tasks.third.data.DataReaderException;
 import com.epam.training.tasks.third.entities.Cube;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CubeCreator {
+
+    private static final Logger LOGGER = Logger.getLogger(CubeCreator.class);
 
     private final DataReader dataReader;
     private final DataParser dataParser;
@@ -22,6 +25,8 @@ public class CubeCreator {
     }
 
     public List<Cube> create(String filename) throws DataReaderException {
+
+        LOGGER.info("Creating Cubes from file");
 
         List<Cube> result = new ArrayList<>();
         List<String> fileData = dataReader.read(filename);

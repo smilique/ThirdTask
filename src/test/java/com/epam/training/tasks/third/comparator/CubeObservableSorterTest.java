@@ -11,10 +11,10 @@ public class CubeObservableSorterTest {
 
     private final CubeObservableSorter sorter = new CubeObservableSorter();
 
-    private final CubeObservable FIRST_CUBE = new CubeObservable(1,1,1,1);
-    private final CubeObservable SECOND_CUBE = new CubeObservable(1,2,3,2);
-    private final CubeObservable THIRD_CUBE = new CubeObservable(2,3,4,3);
-    private final CubeObservable FOURTH_CUBE = new CubeObservable(3,4,2,4);
+    private final CubeObservable FIRST_CUBE = new CubeObservable(1,2,3,1);
+    private final CubeObservable SECOND_CUBE = new CubeObservable(2,4,6,2);
+    private final CubeObservable THIRD_CUBE = new CubeObservable(3,6,9,3);
+    private final CubeObservable FOURTH_CUBE = new CubeObservable(4,8,12,4);
 
     private final List<CubeObservable> expected = Arrays.asList(FIRST_CUBE,SECOND_CUBE,THIRD_CUBE,FOURTH_CUBE);
     private final List<CubeObservable> unsortedCubes = Arrays.asList(THIRD_CUBE,SECOND_CUBE,FOURTH_CUBE,FIRST_CUBE);
@@ -52,6 +52,42 @@ public class CubeObservableSorterTest {
 
         //when
         List<CubeObservable> actual = sorter.sortByVolume(Arrays.asList(THIRD_CUBE,SECOND_CUBE,FOURTH_CUBE,FIRST_CUBE));
+        //then
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void testCubeObservableSorterShouldReturnSortedListWhenSortedByX() {
+
+        //given
+
+        //when
+        List<CubeObservable> actual = sorter.sortByX(Arrays.asList(THIRD_CUBE,SECOND_CUBE,FOURTH_CUBE,FIRST_CUBE));
+        //then
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void testCubeObservableSorterShouldReturnSortedListWhenSortedByY() {
+
+        //given
+
+        //when
+        List<CubeObservable> actual = sorter.sortByY(Arrays.asList(THIRD_CUBE,SECOND_CUBE,FOURTH_CUBE,FIRST_CUBE));
+        //then
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void testCubeObservableSorterShouldReturnSortedListWhenSortedByZ() {
+
+        //given
+
+        //when
+        List<CubeObservable> actual = sorter.sortByZ(Arrays.asList(THIRD_CUBE,SECOND_CUBE,FOURTH_CUBE,FIRST_CUBE));
         //then
         Assert.assertEquals(expected,actual);
 

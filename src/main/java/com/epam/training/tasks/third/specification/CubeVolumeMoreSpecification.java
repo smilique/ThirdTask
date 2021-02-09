@@ -3,12 +3,12 @@ package com.epam.training.tasks.third.specification;
 import com.epam.training.tasks.third.entities.CubeObservable;
 import com.epam.training.tasks.third.logic.CubeCalculator;
 
-public class CubeAreaLessSpecification implements CubeSpecification{
+public class CubeVolumeMoreSpecification implements CubeSpecification{
 
-    private final double compareArea;
+    private final double compareVolume;
 
-    public CubeAreaLessSpecification(int comparable) {
-        compareArea = comparable;
+    public CubeVolumeMoreSpecification(int comparable) {
+        compareVolume = comparable;
     }
 
     @Override
@@ -16,8 +16,7 @@ public class CubeAreaLessSpecification implements CubeSpecification{
 
         CubeCalculator calculator = new CubeCalculator();
 
-        double cubeSurfaceArea = calculator.getCubeSurfaceArea(cube);
-
-        return cubeSurfaceArea < compareArea;
+        double cubeVolume = calculator.getCubeVolume(cube);
+        return cubeVolume > compareVolume;
     }
 }
