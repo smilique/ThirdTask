@@ -10,6 +10,7 @@ public class Cube {
     private double sideLength;
 
 
+
     public Cube(double x, double y, double z, double sideLength) {
         this.x = x;
         this.y = y;
@@ -57,7 +58,7 @@ public class Cube {
 
     @Override
     public String toString() {
-        return "Cube{" +
+        return "params{" +
                 "x=" + x +
                 ", y=" + y +
                 ", z=" + z +
@@ -66,13 +67,15 @@ public class Cube {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cube cube = (Cube) o;
-        return Double.compare(cube.x, x) == 0 && Double.compare(cube.y, y)
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Cube cube = (Cube) object;
+
+        return Double.compare(cube.x, x)
+                == 0 && Double.compare(cube.y, y)
                 == 0 && Double.compare(cube.z, z)
-                    == 0 && Double.compare(cube.sideLength, sideLength) == 0;
+                == 0 && Double.compare(cube.sideLength, sideLength) == 0;
     }
 
     @Override

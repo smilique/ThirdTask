@@ -1,7 +1,6 @@
 package com.epam.training.tasks.third.logic;
 
 import com.epam.training.tasks.third.entities.Cube;
-import com.epam.training.tasks.third.logic.CubeOnPlaneChecker;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +13,7 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnXY(new Cube(1,2,0,3));
+        boolean actual = cubeOnPlaneChecker.isOnXy(new Cube(1,2,0,3));
         //then
         Assert.assertTrue(actual);
     }
@@ -24,7 +23,7 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnZX(new Cube(2,0,1,3));
+        boolean actual = cubeOnPlaneChecker.isOnZx(new Cube(2,0,1,3));
         //then
         Assert.assertTrue(actual);
     }
@@ -34,7 +33,7 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnYZ(new Cube(0,1,2,3));
+        boolean actual = cubeOnPlaneChecker.isOnYz(new Cube(0,1,2,3));
         //then
         Assert.assertTrue(actual);
 
@@ -45,7 +44,7 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnXY(new Cube(1,2,3,3));
+        boolean actual = cubeOnPlaneChecker.isOnXy(new Cube(1,2,3,3));
         //then
         Assert.assertTrue(actual);
     }
@@ -55,7 +54,7 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnZX(new Cube(2,3,1,3));
+        boolean actual = cubeOnPlaneChecker.isOnZx(new Cube(2,3,1,3));
         //then
         Assert.assertTrue(actual);
     }
@@ -65,17 +64,18 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnYZ(new Cube(3,1,2,3));
+        boolean actual = cubeOnPlaneChecker.isOnYz(new Cube(3,1,2,3));
         //then
         Assert.assertTrue(actual);
     }
+
 
     @Test
     public void testCubeOnPlaneShouldNotDetectCubeOnPlaneWhenCubeOutsideXY() {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnXY(new Cube(1,2,4,3));
+        boolean actual = cubeOnPlaneChecker.isOnXy(new Cube(1,2,4,3));
         //then
         Assert.assertFalse(actual);
     }
@@ -85,7 +85,7 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnZX(new Cube(2,4,1,3));
+        boolean actual = cubeOnPlaneChecker.isOnZx(new Cube(2,4,1,3));
         //then
         Assert.assertFalse(actual);
     }
@@ -95,8 +95,10 @@ public class CubeOnPlaneCheckerTest {
         //given
 
         //when
-        boolean actual = cubeOnPlaneChecker.isOnYZ(new Cube(4,1,2,3));
+        boolean actual = cubeOnPlaneChecker.isOnYz(new Cube(4,1,2,3));
         //then
         Assert.assertFalse(actual);
     }
+
+
 }

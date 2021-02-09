@@ -4,7 +4,7 @@ import com.epam.training.tasks.third.entities.Cube;
 
 public class CubeOnPlaneChecker {
 
-    public boolean isOnXY(Cube cube) {
+    public boolean isOnXy(Cube cube) {
 
         double side = cube.getSideLength();
         boolean checkEndPoint = cube.getZ() == side;
@@ -13,7 +13,7 @@ public class CubeOnPlaneChecker {
         return checkStartPoint || checkEndPoint;
     }
 
-    public boolean isOnYZ(Cube cube) {
+    public boolean isOnYz(Cube cube) {
 
         double side = cube.getSideLength();
         boolean checkEndPoint = cube.getX() == side;
@@ -22,7 +22,7 @@ public class CubeOnPlaneChecker {
         return checkStartPoint || checkEndPoint;
     }
 
-    public boolean isOnZX(Cube cube) {
+    public boolean isOnZx(Cube cube) {
 
         double side = cube.getSideLength();
         boolean checkEndPoint = cube.getY() == side;

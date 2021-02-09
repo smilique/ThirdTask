@@ -22,4 +22,5 @@ public class CubeCalculator {
         return sideLength * sideLength * 6;
     }
 
+
 }

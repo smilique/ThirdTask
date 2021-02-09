@@ -2,8 +2,6 @@ package com.epam.training.tasks.third.entities;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CubeObservableTest {
 
     @Test
@@ -13,7 +11,7 @@ public class CubeObservableTest {
         CubeObserver observer = new CubeObserver();
         observer.addObservable(cube);
         //when
-        CubeObserver actual = cube.getState();
+       // CubeObserver actual = cube.getState(cube);
         //then
 
     }
